@@ -23,5 +23,8 @@ class Stack {
             top--;
         }
     }
+    peek = () => {
+        return this.data[this.top-1];
+    }
 }
 module.exports = new Stack();
