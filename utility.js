@@ -23,8 +23,23 @@ class Stack {
             top--;
         }
     }
+
     peek = () => {
         return this.data[this.top-1];
+    }
+
+    length = () => {
+        return this.top;
+    }
+
+    reverse() {
+       this._reverse(this.top - 1);
+    }
+    _reverse(index) {
+        if(index != 0) {
+           this._reverse(index-1);
+        }
+        console.log(this.data[index]);
     }
 }
 module.exports = new Stack();
