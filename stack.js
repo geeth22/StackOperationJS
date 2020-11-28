@@ -5,7 +5,7 @@ checkoption = function () {
     let isTerminated = true;
     while (isTerminated == true) {
         /** take choice input from the user */
-        let checkoption = readlineSync.question("\nEner your choice:-\n1.)push\n2.)pop\n3.)print\n4.)exit\n");
+        let checkoption = readlineSync.question("\nEner your choice:-\n1.)push\n2.)pop\n3.)print\n4.)peek\n5.)exit\n");
         switch (checkoption) {
             case '1': let element = readlineSync.question("Enter the element:");
                 Utility.push(element);
@@ -13,8 +13,11 @@ checkoption = function () {
             case '2': Utility.pop();
                 break;
             case '3': Utility.print();
-                break;    
-            case '4': isTerminated = false;
+                break;
+	    case '4': 
+		let peek = Utility.peek();
+		console.log(peek);    
+            case '5': isTerminated = false;
                 break;
             default: console.log("please enter correct option");
         }
